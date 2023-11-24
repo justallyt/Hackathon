@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap');
+
+*{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+:root{
+    --background: #f1f1f1;
+    --grey-shade-1: #656266;
+    --grey-shade-2: #616161;
+    --grey-shade-3: #322f33;
+    --grey-shade-4: #1c181d;
+    --font-light-color: #e3e3e3;
+    --font-mid-color: #616161;
+    --font-dark-color: #475467;
+    --s50: #ebebeb;
+    --s100: rgba(0,0,0,0.07);
+    --s200: rgba(255, 255, 255, 0.1);
+    --hover-color: #f7f7f7;
+    --pressed-color: #f0f0f0;
+    --focused-color: #005db3;
+}
+/* Typography */
+.inter12px{
+      font-size: 12px;
+      line-height: 130%;
+      letter-spacing: 0%;
+      font-family: 'Inter', sans-serif;
+}
+.inter13px{
+       font-size: 13px;
+       font-family: 'Inter', sans-serif;
+       line-height: 140%;
+       letter-spacing: 0%;
+}
+.inter14px{
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      line-height: 140%;
+      letter-spacing: 0%;
+}
+body{
+    font-family: 'Inter', sans-serif;
+    background: var(--background);
+}
+
+/* Header Styles */
+header{
+     width: 100%;
+     height: 56px;
+     background:var(--grey-shade-4);
+     padding: 12px 16px;
+}
+
+.header-content{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.header-content .mobile-logo{
+      display: none;
+}
+.header-content .search-bar{
+      width: 480px;
+      border-radius: 8px;
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      -ms-border-radius: 8px;
+      -o-border-radius: 8px;
+      border: 1px solid var(--font-mid-color);
+      display: flex;
+      align-items: center;
+      padding: 8px;
+      gap: 6px;
+      background: var(--s200);
+      height: 32px;
+}
+.search-bar:hover{
+    border: 1px solid #e1e1e1be;
+}
+.search-bar:has(input:focus),
+.search-bar.onpressed{
+      border: 2px solid white;
+}
+.search-bar img{
+       filter: invert(1);
+       -webkit-filter: invert(1);
+}
+.search-bar .search-control{
+        border: none;
+        background: transparent;
+        outline: none;
+        color: var(--font-light-color);
+        width: 100%;
+}
+.search-control::placeholder{
+     color: var(--font-light-color);
+     opacity: 0.7;
+     font-size: 13px;
+}
+
+.header-actions{
+       display: flex;
+       gap: 8px;
+       align-items: center;
+}
+.header-actions .notification-wrap .bell-icon{
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        -ms-border-radius: 8px;
+        -o-border-radius: 8px;
+        padding: 8px;
+        cursor: pointer;
+        background: var(--s200);
+}
+.notification-wrap .bell-icon:hover{
+      background: var(--grey-shade-1);
+}
+.bell-icon img{
+      filter: invert(1);
+      -webkit-filter: invert(1);
+}
+.header-actions .profile-wrap-intro{
+       display: flex;
+       gap: 8px;
+       align-items: center;
+       padding: 2px 2px 2px 8px;
+       width: 142px;
+       height: 32px;
+       background: var(--s200);
+       border-radius: 8px;
+       -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+       -ms-border-radius: 8px;
+       -o-border-radius: 8px;
+       cursor: pointer;
+}
+.profile-wrap-intro:hover{
+      background: var(--grey-shade-1)
+}
+.profile-wrap-intro p{
+      color: var(--font-light-color);
+     font-weight: 500;
+}
+.profile-wrap-intro span{
+     width: 28px;
+     height: 28px;
+     border-radius: 6px;
+     -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+     -ms-border-radius: 6px;
+     -o-border-radius: 6px;
+     background: #36FBA1;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     color: #00000066;
+     font-weight: 500;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsivity */
+@media(max-width: 768px){
+        .header-content .desktop-logo{
+            display: none;
+        }
+       .header-content .mobile-logo{
+               display: block;
+        }
+        .header-actions .profile-wrap-intro{
+             width: auto;
+             padding: 0px;
+        }
+        .profile-wrap-intro p{
+            display: none;
+        }
+}
