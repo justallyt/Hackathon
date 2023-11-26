@@ -474,7 +474,8 @@ header{
 .progress-status .filled{
       height: 4px;
       background: #1a1a1a;
-      width: calc(72px / 5);
+      /* width: calc(72px / 5); */
+   
       border-radius: 25px;
       -webkit-border-radius: 25px;
       -moz-border-radius: 25px;
@@ -515,12 +516,16 @@ header{
       gap: 96px;
       padding: 8px 8px 12px 8px;
       align-items: center;
-      background: #f3f3f3;
+      justify-content: space-between;
+      background: white;
       border-radius: 10px;
       -webkit-border-radius: 10px;
       -moz-border-radius: 10px;
       -ms-border-radius: 10px;
       -o-border-radius: 10px;
+}
+.setup-option-moja.active{
+      background: #f3f3f3;
 }
 .setup-option-moja .left-col{
     display: flex;
@@ -530,11 +535,37 @@ header{
 .setup-option-moja .left-col img{
     width: 24px;
     height: 24px;
-    filter: invert(1);
-    -webkit-filter: invert(1);
 }
-.setup-option-moja .left-col img.dotted{
+.icon-actions span{
+    cursor: pointer;
+}
+.setup-option-moja span.dotted.remove{
+      display: none;
+}
+.setup-option-moja .icon-actions{
+    position: relative;
+}
+.icon-actions span.normal{
+      display: none;
+}
+.setup-option-moja .left-col img.rol{
      color: #8a8a8a;
+     filter: invert(0.4);
+     -webkit-filter: invert(0.4);
+}
+.setup-option-moja .blacken{
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-items: center;
+      border-radius: 24px;
+      border: 1px solid;;
+      -webkit-border-radius: 24px;
+      -moz-border-radius: 24px;
+      -ms-border-radius: 24px;
+      -o-border-radius: 24px;
 }
 .setup-option-moja .left-col .text-deets{
        display: flex;
@@ -548,14 +579,21 @@ header{
 .text-deets span{
     font-weight: 500;
     color: var(--font-mid-color);
+    display: none;
+}
+.setup-option-moja.active .text-deets span{
+     display: block;
 }
 .text-deets .link{
      color: #0c7de8;
      font-weight: 500;
 }
 .text-deets .deets-btns{
-     display: flex;
+     display: none;
      gap: 16px;
+}
+.setup-option-moja.active .text-deets .deets-btns{
+      display: flex;
 }
 .text-deets .external{
       background: #404040;
@@ -585,6 +623,10 @@ header{
 .setup-option-moja .right-col{
      width: 156.145px;
      height: 120px;
+     display: none;
+}
+.setup-option-moja.active .right-col{
+      display: block;
 }
 
 
